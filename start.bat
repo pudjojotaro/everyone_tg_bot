@@ -13,12 +13,12 @@ if errorlevel 1 (
 if not exist venv (
     echo Creating virtual environment...
     python -m venv venv
+    call venv\Scripts\activate.bat
+    echo Installing dependencies...
+    pip install -q -r requirements.txt
+) else (
+    call venv\Scripts\activate.bat
 )
-
-call venv\Scripts\activate.bat
-
-echo Installing dependencies...
-pip install -q -r requirements.txt
 
 if not exist .env (
     echo.
