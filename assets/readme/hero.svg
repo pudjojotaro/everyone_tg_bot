@@ -2,7 +2,7 @@
      width="1200" height="360" viewBox="0 0 1200 360"
      role="img" aria-labelledby="hero-title hero-desc">
   <title id="hero-title">everyone_tg_bot</title>
-  <desc id="hero-desc">A Telegram bot: people talk in a group chat, then the /all command tags everyone the bot has seen.</desc>
+  <desc id="hero-desc">A Telegram bot: people talk in a group chat, then the /all command tags everyone who's spoken.</desc>
 
   <defs>
     <linearGradient id="bg-grad" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
@@ -26,9 +26,9 @@
           font-weight="700" fill="#F3F7FA">everyone_tg_bot</text>
 
     <text x="0" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          font-size="22" fill="#C3D0DC">Tags everyone who's spoken in your group —</text>
+          font-size="22" fill="#C3D0DC">Tags everyone who's spoken in your group chat —</text>
     <text x="0" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          font-size="22" fill="#C3D0DC">one command, no member-list API required.</text>
+          font-size="22" fill="#C3D0DC">one command, nobody left out.</text>
 
     <!-- metadata chips -->
     <g transform="translate(0 168)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">

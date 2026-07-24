@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/readme/hero.svg" width="100%" alt="everyone_tg_bot — a Telegram bot that tags everyone who's spoken in your group with one command, /all">
+  <img src="./assets/readme/hero.svg" width="100%" alt="everyone_tg_bot — a Telegram bot that tags everyone who's spoken in your group chat with one command, /all">
 </p>
 
 <p align="center">
