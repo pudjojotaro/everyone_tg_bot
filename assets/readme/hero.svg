@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">everyone_tg_bot</title>
+  <desc id="hero-desc">A Telegram bot: people talk in a group chat, then the /all command tags everyone the bot has seen.</desc>
+
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101B27"/>
+      <stop offset="1" stop-color="#0B131C"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3FC1FF"/>
+      <stop offset="1" stop-color="#1E96D6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" rx="26" fill="url(#bg-grad)"/>
+
+  <!-- Title block -->
+  <g id="title-block" transform="translate(64 66)">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15"
+          letter-spacing="2.5" fill="#3FC1FF">TELEGRAM BOT</text>
+
+    <text x="0" y="56" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="44"
+          font-weight="700" fill="#F3F7FA">everyone_tg_bot</text>
+
+    <text x="0" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-size="22" fill="#C3D0DC">Tags everyone who's spoken in your group —</text>
+    <text x="0" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-size="22" fill="#C3D0DC">one command, no member-list API required.</text>
+
+    <!-- metadata chips -->
+    <g transform="translate(0 168)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">
+      <rect x="0" y="0" width="72" height="30" rx="15" fill="#17222E" stroke="#283746"/>
+      <text x="36" y="20" text-anchor="middle" fill="#9FB0C0">Python</text>
+
+      <rect x="84" y="0" width="204" height="30" rx="15" fill="#17222E" stroke="#283746"/>
+      <text x="186" y="20" text-anchor="middle" fill="#9FB0C0">python-telegram-bot</text>
+
+      <rect x="300" y="0" width="86" height="30" rx="15" fill="#17222E" stroke="#283746"/>
+      <text x="343" y="20" text-anchor="middle" fill="#9FB0C0">SQLite</text>
+    </g>
+
+    <text x="0" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-size="15" fill="#5B6B7B">Double-click to run — no terminal needed.</text>
+  </g>
+
+  <!-- Mechanism proof: mini chat showing the actual /all flow -->
+  <g id="chat-proof" transform="translate(700 40)">
+    <rect x="0" y="0" width="436" height="280" rx="18" fill="#141F2A" stroke="#233242" stroke-width="1.5"/>
+
+    <circle cx="26" cy="28" r="5" fill="#3FC1FF"/>
+    <text x="40" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#8CA0B3">Weekend Trip</text>
+    <text x="410" y="33" text-anchor="end" font-family="-apple-system, sans-serif" font-size="12" fill="#4A5A6B">3 online</text>
+    <line x1="18" y1="48" x2="418" y2="48" stroke="#233242"/>
+
+    <!-- incoming messages from three users the bot has now "seen" -->
+    <g font-family="-apple-system, BlinkMacSystemFont, sans-serif">
+      <text x="18" y="70" font-size="12" fill="#5B87A6" font-weight="600">Ann</text>
+      <rect x="18" y="76" width="120" height="28" rx="10" fill="#1C2A38"/>
+      <text x="32" y="94" font-size="13" fill="#D6E0E9">on my way!</text>
+
+      <text x="18" y="118" font-size="12" fill="#7AA65B" font-weight="600">Leo</text>
+      <rect x="18" y="124" width="96" height="28" rx="10" fill="#1C2A38"/>
+      <text x="32" y="142" font-size="13" fill="#D6E0E9">same 🚗</text>
+
+      <text x="18" y="166" font-size="12" fill="#C98A4B" font-weight="600">Kai</text>
+      <rect x="18" y="172" width="146" height="28" rx="10" fill="#1C2A38"/>
+      <text x="32" y="190" font-size="13" fill="#D6E0E9">see you all soon</text>
+    </g>
+
+    <!-- outgoing /all command -->
+    <rect x="298" y="210" width="120" height="30" rx="12" fill="url(#accent-grad)"/>
+    <text x="418" y="230" text-anchor="end" font-family="ui-monospace, SFMono-Regular, monospace"
+          font-size="14" font-weight="700" fill="#06222F" transform="translate(-11 0)">/all</text>
+
+    <!-- bot reply: mention chips for everyone it has seen -->
+    <g transform="translate(18 248)" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13">
+      <rect x="0" y="0" width="62" height="24" rx="12" fill="#12324A" stroke="#2B5C82"/>
+      <text x="31" y="16" text-anchor="middle" fill="#6FC3F7">@Ann</text>
+
+      <rect x="70" y="0" width="60" height="24" rx="12" fill="#12324A" stroke="#2B5C82"/>
+      <text x="100" y="16" text-anchor="middle" fill="#6FC3F7">@Leo</text>
+
+      <rect x="138" y="0" width="58" height="24" rx="12" fill="#12324A" stroke="#2B5C82"/>
+      <text x="167" y="16" text-anchor="middle" fill="#6FC3F7">@Kai</text>
+    </g>
+  </g>
+</svg>
