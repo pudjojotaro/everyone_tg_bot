@@ -91,8 +91,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     )
 
 
+async def announce_commands(application: Application) -> None:
+    """Populate the command menu Telegram shows when someone types '/'."""
+    me = await application.bot.get_me()
+    logger.info("Logged in as @%s (id %s)", me.username, me.id)
+    await application.bot.set_my_commands(
+        [("all", "Tag everyone I've seen talk in this chat")]
+    )
+
+
 def main() -> None:
-    application = Application.builder().token(BOT_TOKEN).build()
+    application = Application.builder().token(BOT_TOKEN).post_init(announce_commands).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("all", tag_all))
