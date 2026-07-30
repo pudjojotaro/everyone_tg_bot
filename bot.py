@@ -10,7 +10,15 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 
 load_dotenv()
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "").strip()
+if not BOT_TOKEN or ":" not in BOT_TOKEN:
+    raise SystemExit(
+        "No valid bot token found.\n"
+        "Open the .env file next to this script and make sure it has a line like:\n"
+        "    BOT_TOKEN=123456789:AAExampleTokenFromBotFather\n"
+        "with the token @BotFather gave you. Or delete .env and run the starter "
+        "script again to be asked for it."
+    )
 DB_PATH = os.environ.get("DB_PATH", "bot.db")
 
 logging.basicConfig(level=logging.INFO)

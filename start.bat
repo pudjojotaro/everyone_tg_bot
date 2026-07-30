@@ -20,12 +20,17 @@ if not exist venv (
     call venv\Scripts\activate.bat
 )
 
-if not exist .env (
-    echo.
-    echo First-time setup: paste your bot token from @BotFather below.
-    set /p BOT_TOKEN=Bot token:
-    echo BOT_TOKEN=%BOT_TOKEN%> .env
-)
+rem Not wrapped in an if ( ... ) block: cmd expands %BOT_TOKEN% when it parses the
+rem whole block, which would happen before set /p has read anything.
+if exist .env goto :run
+
+echo.
+echo First-time setup: paste your bot token from @BotFather below.
+set /p BOT_TOKEN=Bot token:
+rem Redirection first, so a token ending in a digit isn't read as a stream number.
+>.env echo BOT_TOKEN=%BOT_TOKEN%
+
+:run
 
 echo.
 echo Starting the bot... ^(close this window to stop it^)
