@@ -53,6 +53,25 @@ cp .env.example .env    # then paste your token into .env as BOT_TOKEN=...
 python bot.py
 ```
 
+## If the bot starts but never connects
+
+If the terminal prints `Bot starting...` and then nothing at all — no
+`Logged in as @...`, no errors — your network is blocking
+`api.telegram.org`. That's a different host than the Telegram app uses, so
+the app working normally doesn't mean the Bot API is reachable. Some ISPs
+block it; so can antivirus or a corporate firewall.
+
+To check, open `https://api.telegram.org/bot<your-token>/getMe` in a
+browser. If that hangs or fails too, add a proxy to your `.env`:
+
+```
+PROXY_URL=socks5://user:password@host:1080
+```
+
+A VPN on the whole machine works just as well and needs no config. For a
+bot meant to run 24/7, a cheap VPS outside the blocked network is the
+sturdier answer.
+
 ## Notes
 
 - Only tags people who've sent at least one message since the bot first joined.

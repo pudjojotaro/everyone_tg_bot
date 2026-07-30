@@ -20,6 +20,9 @@ if not BOT_TOKEN or ":" not in BOT_TOKEN:
         "script again to be asked for it."
     )
 DB_PATH = os.environ.get("DB_PATH", "bot.db")
+# Some ISPs block api.telegram.org even where the Telegram app itself works.
+# Set PROXY_URL in .env to route the bot's traffic around that.
+PROXY_URL = os.environ.get("PROXY_URL", "").strip()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -101,7 +104,12 @@ async def announce_commands(application: Application) -> None:
 
 
 def main() -> None:
-    application = Application.builder().token(BOT_TOKEN).post_init(announce_commands).build()
+    builder = Application.builder().token(BOT_TOKEN).post_init(announce_commands)
+    if PROXY_URL:
+        logger.info("Using proxy %s", PROXY_URL)
+        # get_updates_proxy too: long polling uses its own connection pool.
+        builder = builder.proxy(PROXY_URL).get_updates_proxy(PROXY_URL)
+    application = builder.build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("all", tag_all))
